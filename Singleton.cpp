@@ -25,8 +25,13 @@ private:
 
 Singleton *Singleton::instance = nullptr;
 
+
 int main() {
-    Singleton &singleton = Singleton::getInstance();
-    singleton.someOperation();
+    Singleton &Singleton1 = Singleton::getInstance();
+    Singleton1.someOperation();
+    std::cout << "Address1: " << &Singleton1 << std::endl;
+    Singleton &Singleton2 = Singleton::getInstance();
+    std::cout << "Address2: " << &Singleton2 << std::endl;
+
     return 0;
 }
